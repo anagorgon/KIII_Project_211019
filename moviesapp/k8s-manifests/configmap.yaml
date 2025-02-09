@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: movies-config
+  namespace: movies-namespace
+data:
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres.movies-namespace.svc.cluster.local/movies
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: movies-namespace
+data:
+  POSTGRES_DB: movies
